@@ -30,10 +30,46 @@ def g(n):
 
     return x
     
-print(g(20))
 
 # This would be a lot cleaner if we could figure out how to just check divisibility by a range 
 
 # Is there some fundamental math that I'm missing that would make the computation
 # quicker??
+
+
+
+def h(n):
+    x = n + 1
+    divis = False
+    while not divis:
+        for i in range(n // 2, n):
+            if x % i != 0:
+                x += 1
+                print(x) 
+			 
+    return x
+
+
+def p(n):
+    x = n + 1500
+    print(x)
+    divis = False
+    if divis:
+        return x
+    else:
+        for i in range(n // 2, n):
+            if x % i != 0:
+                p(n + 1) 
+
+        divis = True
+
+
+
+
+
+
+#print(g(20))
+print(p(10))
+
+
 
