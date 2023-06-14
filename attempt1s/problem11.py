@@ -69,25 +69,25 @@ def f():
     for i in grid:
         for j in i:
             clean.append(j)
-
+    
     totals = []
+    j = 19
     for i in range(len(clean)):
         if i < 337:
-            if i % 19 == 0 and not i == 0:
+            if i % (j) == 0 and not i == 0:
                 totals.append([clean[i]])
-            elif i % 18 == 0 and not i == 0:
+            elif i % (j - 1) == 0 and not i == 0:
                 totals.append([clean[i], clean[i + 21]])
-            elif i % 17 == 0 and not i == 0:
-                totals.append([clean[i], clean[i + 21], clean[i
-+ 42]])
+            elif i % (j - 2) == 0 and not i == 0:
+                totals.append([clean[i], clean[i + 21],
+clean[i + 42]])
             else:
-                totals.append([clean[i], clean[i + 21], clean[i + 42],
-clean[i + 63]]) 
+                totals.append([clean[i], clean[i + 21], clean[i + 42],clean[i + 63]]) 
 
 
-    for i in range(len(totals)):
-        print(totals[i])
-            
+    delete = [clean[i] for i in range(1, len(clean)) if i % 19 == 0]
+    for i in totals:
+        print(i) 
     
             
 
