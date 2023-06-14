@@ -58,14 +58,35 @@ def f():
     rightLeft = max([prod(grid[i][j : j + 4]) for j in range(20) for i in range(20)])
 
 
-
     # up/down
     rotate = [[grid[i][j] for i in range(20)] for j in range(20)] 
     upDown = max([prod(rotate[i][j : j + 4]) for j in range(20) for i in range(20)])
 
+
+
     #diag1
-    for i in range(20):
-        print(grid[i][i])
+    clean = []
+    for i in grid:
+        for j in i:
+            clean.append(j)
+
+    totals = []
+    for i in range(len(clean)):
+        if i < 337:
+            if i % 19 == 0 and not i == 0:
+                totals.append([clean[i]])
+            elif i % 18 == 0 and not i == 0:
+                totals.append([clean[i], clean[i + 21]])
+            elif i % 17 == 0 and not i == 0:
+                totals.append([clean[i], clean[i + 21], clean[i
++ 42]])
+            else:
+                totals.append([clean[i], clean[i + 21], clean[i + 42],
+clean[i + 63]]) 
+
+
+    for i in range(len(totals)):
+        print(totals[i])
             
     
             
@@ -82,10 +103,10 @@ print(f())
 
 
 # 	[
-#	grid[0][3]
-#	grid[1][2]
-#	grid[2][1]
-#	grid[3][0]
+#	grid[0][0]
+#	grid[0][1], grid[1][0]
+#	grid[0][2], grid[1][1], grid[2][0]
+#	grid[0][3], grid[1][2], grid[2][1], grid[3][0]
 #	] 
 
 
