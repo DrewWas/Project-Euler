@@ -61,16 +61,13 @@ def f():
 
     # up/down
 
-
-    #bob = [grid[0][0], grid[1][0], grid[2][0], grid[3][0] ] 
-
-    bob = [[grid[i][j] for i in range(4)] for j in range(20) for k in [i for i in ]] 
-
-    for i in bob:
-        print(i)
+    rotate = [[grid[i][j] for i in range(20)] for j in range(20)] 
+    upDown = max([prod(rotate[i][j : j + 4]) for j in range(20) for i in range(20)])
 
 
-    return rightLeft
+
+
+    return rightLeft, upDown, max(rightLeft, upDown)
 
 
 
