@@ -60,9 +60,15 @@ def f():
 
 
     # up/down
-
     rotate = [[grid[i][j] for i in range(20)] for j in range(20)] 
     upDown = max([prod(rotate[i][j : j + 4]) for j in range(20) for i in range(20)])
+
+    #diag1
+    for i in range(20):
+        print(grid[i][i])
+            
+    
+            
 
 
 
@@ -75,10 +81,12 @@ def f():
 print(f())
 
 
-
-#    grid[0][0]
-#    grid[1][0]
-#    grid[2][0]
+# 	[
+#	grid[0][3]
+#	grid[1][2]
+#	grid[2][1]
+#	grid[3][0]
+#	] 
 
 
 
