@@ -11,7 +11,6 @@ Find the product of abc
 """
 
 def f():
-    from math import sqrt
     a = 0
     b = a + 1
     c = 1000 - (a + b)
