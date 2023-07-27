@@ -65,32 +65,10 @@ def f():
 
 
     #diag1
-    clean = []
-    for i in grid:
-        for j in i:
-            clean.append(j)
-    
-    totals = []
-    j = 19
-    for i in range(len(clean)):
-        if i < 337:
-            if i % (j) == 0 and not i == 0:
-                totals.append([clean[i]])
-            elif i % (j - 1) == 0 and not i == 0:
-                totals.append([clean[i], clean[i + 21]])
-            elif i % (j - 2) == 0 and not i == 0:
-                totals.append([clean[i], clean[i + 21],
-clean[i + 42]])
-            else:
-                totals.append([clean[i], clean[i + 21], clean[i + 42],clean[i + 63]]) 
-
-
-    delete = [clean[i] for i in range(1, len(clean)) if i % 19 == 0]
-    for i in totals:
-        print(i) 
     
             
-
+    for i in grid:
+        print(i)
 
 
 

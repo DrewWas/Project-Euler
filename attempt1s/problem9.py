@@ -10,23 +10,26 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product of abc
 """
 
+def f():
+    from math import sqrt
+    a = 0
+    b = a + 1
+    c = 1000 - (a + b)
 
 
-def f(x):
+    while a**2 + b**2 != c**2:
+        print(a,b,c)
+        b += 1
+        c -= 1
+        if c == b or b > c:
+            a += 1
+            b = a + 1 
+            c = 1000 - (a + b)
 
-    while x > 1:
-        if (x ** (1/2) % 1) == 0:
-            a = x - 1
-            b = x - a
-            print(x, a, b) 
-
-        x -= 1
-        
-        
-
-
-print(f(1000 * 1000))
+    prod = a * b * c
+    print("final: %s %s %s" % (a,b,c))
+    print("product of a*b*c = %s" % (prod))
+f()
     
-
 
 
