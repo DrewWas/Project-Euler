@@ -65,11 +65,14 @@ def f():
 
 
     #diag1
-    
-            
-    for i in grid:
-        print(i)
+    diag1s = []        
+    for i in range(20):
+        for j in range(20):
+            lst = list( grid[i][j], grid[i+1][j], grid[i+2][j], grid[i+3][j] )
+            diag1s.append(lst)
 
+
+    print(diag1s)
 
 
     return rightLeft, upDown, max(rightLeft, upDown)
@@ -85,7 +88,16 @@ print(f())
 #	grid[0][1], grid[1][0]
 #	grid[0][2], grid[1][1], grid[2][0]
 #	grid[0][3], grid[1][2], grid[2][1], grid[3][0]
+#	grid[0][4], grid[1][3], grid[2][2], grid[3][1]
 #	] 
+
+
+# What if were only on the first 3 iterations and dont acutally want to append all
+# 4 
+
+# If index error, == 1 (n*1 = n)
+
+
 
 
 
