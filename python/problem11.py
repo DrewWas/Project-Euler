@@ -66,13 +66,26 @@ def f():
 
     #diag1
     diag1s = []        
+    n = 0
     for i in range(20):
-        for j in range(20):
-            lst = list( grid[i][j], grid[i+1][j], grid[i+2][j], grid[i+3][j] )
-            diag1s.append(lst)
+        diag1s.append([grid[n][i]])
+        if i > 0:
+            try:
+                diag1s[i].append(grid[n+1][i-1])
+            except IndexError:
+                diag1s[i].append(1)
+        if i > 1:
+            try:
+                diag1s[i].append(grid[n+2][i-2])
+            except IndexError:
+                diag1s[i].append(1)
+        if i > 2:
+            try:
+                diag1s[i].append(grid[n+3][i-3])
+            except IndexError:
+                diag1s[i].append(1)
 
-
-    print(diag1s)
+        print(diag1s)
 
 
     return rightLeft, upDown, max(rightLeft, upDown)
@@ -91,15 +104,8 @@ print(f())
 #	grid[0][4], grid[1][3], grid[2][2], grid[3][1]
 #	] 
 
-
-# What if were only on the first 3 iterations and dont acutally want to append all
-# 4 
-
-# If index error, == 1 (n*1 = n)
-
-
-
-
+# new approach. Make it all one list and just go i+21 (or i+19 for other diag) for    next diag
+# if out of range
 
 
 
