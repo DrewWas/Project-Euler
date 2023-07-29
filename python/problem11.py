@@ -70,22 +70,30 @@ def f():
     for i in range(20):
         diag1s.append([grid[n][i]])
         if i > 0:
-            try:
-                diag1s[i].append(grid[n+1][i-1])
-            except IndexError:
-                diag1s[i].append(1)
+            diag1s[i].append(grid[n+1][i-1])
         if i > 1:
-            try:
-                diag1s[i].append(grid[n+2][i-2])
-            except IndexError:
-                diag1s[i].append(1)
+            diag1s[i].append(grid[n+2][i-2])
         if i > 2:
-            try:
-                diag1s[i].append(grid[n+3][i-3])
-            except IndexError:
-                diag1s[i].append(1)
+            diag1s[i].append(grid[n+3][i-3])
 
-        print(diag1s)
+
+    n = 1
+    for i in range(20):
+        diag1s.append([grid[n][i]])
+        if i > 0:
+            diag1s[i].append(grid[n+1][i-1])
+        if i > 1:
+            diag1s[i].append(grid[n+2][i-2])
+        if i > 2:
+            diag1s[i].append(grid[n+3][i-3])
+
+
+    print(diag1s)
+
+    # THE PROBLEM is after each row, we need to make sure new sub lists are
+    # being created and not added to already existing ones (has to do with
+    # the indexing)
+
 
 
     return rightLeft, upDown, max(rightLeft, upDown)
