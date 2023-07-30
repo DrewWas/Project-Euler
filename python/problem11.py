@@ -66,21 +66,6 @@ def f():
 
     #diag1
     diag1s = []        
-
-    """
-    n = 0
-    for i in range(20):
-        diag1s.append([grid[n][i]])
-        if i > 0:
-            diag1s[i].append(grid[n+1][i-1])
-        if i > 1:
-            diag1s[i].append(grid[n+2][i-2])
-        if i > 2:
-            diag1s[i].append(grid[n+3][i-3])
-
-        print(diag1s)
-    """
-
     n = 0
     for j in range(20):
         diag1s.append([])
@@ -101,32 +86,52 @@ def f():
                     diag1s[j][i].append(grid[n+3][i-3])
                 except:
                     pass
-
-
         n += 1
+    i_suck_at_programming = []
+    for i in diag1s:
+        for j in i:
+            i_suck_at_programming.append(prod(j))
+            
+            
+    side1 = max(i_suck_at_programming)
 
-    print(diag1s)
+    #diag2
+    diag2s = []        
+    n = 0
+    for j in range(20):
+        diag2s.append([])
+        for i in range(20):
+            diag2s[j].append([grid[j][i]])
+            if i > 0:
+                try:
+                    diag2s[j][i].append(grid[n+1][i+1])
+                except:
+                    pass
+            if i > 1:
+                try:
+                    diag2s[j][i].append(grid[n+2][i+2])
+                except:
+                    pass
+            if i > 2:
+                try:
+                    diag2s[j][i].append(grid[n+3][i+3])
+                except:
+                    pass
 
-    return rightLeft, upDown, max(rightLeft, upDown)
+    maxi = []
+    for i in diag1s:
+        for j in i:
+            maxi.append(prod(j))
+    side2 = max(maxi)
+
+
+    return rightLeft, upDown, side1, side2, "max: " + str(max(rightLeft, upDown,
+side1, side2))
 
 
 
 
 print(f())
-
-
-# 	[
-#	grid[0][0]
-#	grid[0][1], grid[1][0]
-#	grid[0][2], grid[1][1], grid[2][0]
-#	grid[0][3], grid[1][2], grid[2][1], grid[3][0]
-#	grid[0][4], grid[1][3], grid[2][2], grid[3][1]
-#	] 
-
-# new approach. Make it all one list and just go i+21 (or i+19 for other diag) for    next diag
-# if out of range
-
-
 
 
 
