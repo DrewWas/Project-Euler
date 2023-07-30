@@ -68,8 +68,7 @@ def p(n):
 
 
 
-#print(g(20))
-print(p(10))
+print(g(20))
 
 
 
